@@ -12,7 +12,12 @@ const toLocalDay = (d) => {
   }
 };
 
-export default function TodayTodos({ todos = [], onToggle, onDelete }) {
+export default function TodayTodos({
+  todos = [],
+  onToggle,
+  onDelete,
+  onUpdate,
+}) {
   const now = new Date();
   const todayKey = new Date(
     now.getFullYear(),
@@ -42,7 +47,12 @@ export default function TodayTodos({ todos = [], onToggle, onDelete }) {
             className="todo-animate"
             style={{ animationDelay: `${index * 0.15}s` }}
           >
-            <TodoCard todo={todo} onToggle={onToggle} onDelete={onDelete} />
+            <TodoCard
+              todo={todo}
+              onToggle={onToggle}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+            />
           </div>
         ))}
       </div>

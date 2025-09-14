@@ -103,7 +103,6 @@ const toggleTaskStatus = (req, res) => {
     });
 };
 
-
 const updateTask = (req, res) => {
   const { userId } = req.token;
   const { taskId } = req.params;
@@ -150,10 +149,9 @@ const updateTask = (req, res) => {
     });
 };
 
-
 const searchTasks = (req, res) => {
   const { userId } = req.token;
-  const { query } = req.query; 
+  const { query } = req.query;
 
   taskModel
     .find({

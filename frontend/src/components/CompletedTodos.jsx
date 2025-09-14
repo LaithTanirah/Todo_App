@@ -2,7 +2,12 @@ import React from "react";
 import TodoCard from "./TodoCard";
 import "./css/CompletedTodos.css";
 
-export default function CompletedTodos({ todos = [], onToggle, onDelete }) {
+export default function CompletedTodos({
+  todos = [],
+  onToggle,
+  onDelete,
+  onUpdate,
+}) {
   const completed = todos.filter((todo) => todo.taskStatus === "Completed");
 
   if (!completed.length) {
@@ -19,7 +24,12 @@ export default function CompletedTodos({ todos = [], onToggle, onDelete }) {
             className="todo-animate"
             style={{ animationDelay: `${index * 0.15}s` }}
           >
-            <TodoCard todo={todo} onToggle={onToggle} onDelete={onDelete} />
+            <TodoCard
+              todo={todo}
+              onToggle={onToggle}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+            />
           </div>
         ))}
       </div>

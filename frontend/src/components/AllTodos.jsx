@@ -2,7 +2,7 @@ import React from "react";
 import TodoCard from "./TodoCard";
 import "./css/AllTodos.css";
 
-export default function AllTodos({ todos = [], onToggle, onDelete }) {
+export default function AllTodos({ todos = [], onToggle, onDelete, onUpdate }) {
   if (!Array.isArray(todos)) return <p>No todos available</p>;
   if (todos.length === 0) return <p>No todos available</p>;
 
@@ -16,7 +16,12 @@ export default function AllTodos({ todos = [], onToggle, onDelete }) {
             className="todo-animate"
             style={{ animationDelay: `${index * 0.15}s` }}
           >
-            <TodoCard todo={todo} onToggle={onToggle} onDelete={onDelete} />
+            <TodoCard
+              todo={todo}
+              onToggle={onToggle}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+            />
           </div>
         ))}
       </div>

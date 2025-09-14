@@ -2,7 +2,12 @@ import React from "react";
 import TodoCard from "./TodoCard";
 import "./css/PendingTodos.css";
 
-export default function PendingTodos({ todos = [], onToggle, onDelete }) {
+export default function PendingTodos({
+  todos = [],
+  onToggle,
+  onDelete,
+  onUpdate,
+}) {
   const pending = todos.filter((t) => t.taskStatus === "Pending");
 
   if (!pending.length) {
@@ -19,7 +24,12 @@ export default function PendingTodos({ todos = [], onToggle, onDelete }) {
             className="todo-animate"
             style={{ animationDelay: `${index * 0.15}s` }}
           >
-            <TodoCard todo={t} onToggle={onToggle} onDelete={onDelete} />
+            <TodoCard
+              todo={t}
+              onToggle={onToggle}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+            />
           </div>
         ))}
       </div>

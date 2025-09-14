@@ -34,15 +34,44 @@ export default function Dashboard({ view = "all" }) {
     }
   };
 
+  const handleTaskUpdate = (updatedTask) => {
+    setTodos((prev) =>
+      prev.map((t) => (t._id === updatedTask._id ? updatedTask : t))
+    );
+  };
 
   switch (view) {
     case "completed":
-      return <CompletedTodos todos={todos} onToggle={handleToggle} />;
+      return (
+        <CompletedTodos
+          todos={todos}
+          onToggle={handleToggle}
+          onUpdate={handleTaskUpdate}
+        />
+      );
     case "pending":
-      return <PendingTodos todos={todos} onToggle={handleToggle} />;
+      return (
+        <PendingTodos
+          todos={todos}
+          onToggle={handleToggle}
+          onUpdate={handleTaskUpdate}
+        />
+      );
     case "today":
-      return <TodayTodos todos={todos} onToggle={handleToggle} />;
+      return (
+        <TodayTodos
+          todos={todos}
+          onToggle={handleToggle}
+          onUpdate={handleTaskUpdate}
+        />
+      );
     default:
-      return <AllTodos todos={todos} onToggle={handleToggle} />;
+      return (
+        <AllTodos
+          todos={todos}
+          onToggle={handleToggle}
+          onUpdate={handleTaskUpdate}
+        />
+      );
   }
 }
