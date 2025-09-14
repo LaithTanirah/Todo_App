@@ -1,99 +1,101 @@
 # 📝 To-Do App (MERN Stack)
 
-تطبيق **To-Do App** بسيط لإدارة المهام اليومية (إضافة، تعديل، حذف، تحديد كمكتملة).  
-مبني باستخدام:
+A simple **To-Do App** to manage daily tasks (add, edit, delete, mark as completed).  
+Built with:
 - **Backend:** Node.js + Express.js + MongoDB (Mongoose)
 - **Frontend:** React (Vite) + Material UI + CSS
 - **Auth:** JWT + bcrypt
 
 ---
 
-## 📂 هيكل المشروع
+## 📂 Project Structure
 ```
-/project-root
- ├── backend/         # الكود الخاص بالـ API
- │    ├── server.js
- │    ├── routes/
+/TODO_APP
+ ├── backend/         
  │    ├── controllers/
+ │    ├── middlewares/
  │    ├── models/
- │    └── .env
+ │    ├── routes/
+ │    ├── package.json
+ │    ├── package-lock.json
+ │    └── server.js
  │
- └── frontend/        # الكود الخاص بالـ React
-      ├── src/
+ └── frontend/
       ├── public/
+      ├── src/
+      │    ├── assets/
+      │    ├── components/
+      │    ├── pages/
+      │    ├── services/
+      │    ├── App.css
+      │    ├── App.jsx
+      │    ├── index.css
+      │    └── main.jsx
+      ├── index.html
+      ├── package.json
+      ├── package-lock.json
       └── vite.config.js
 ```
 
 ---
 
-## ⚙️ المتطلبات
-قبل التشغيل لازم يكون عندك:
-- [Node.js](https://nodejs.org/) (v16 أو أحدث)
-- [MongoDB](https://www.mongodb.com/) شغال محليًا أو عبر Atlas
-- مدير حزم npm أو yarn
+## ⚙️ Requirements
+Before running the project, make sure you have:
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [MongoDB](https://www.mongodb.com/) running locally or via Atlas
+- npm or yarn package manager
 
 ---
 
-## 🚀 خطوات التشغيل
+## 🚀 How to Run
 
-### 1️⃣ تشغيل الباك إند
-1. انتقل لمجلد الباك إند:
+### 1️⃣ Run Backend
+1. Navigate to the backend folder:
    ```bash
    cd backend
    ```
-2. نزّل البكجات:
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. أنشئ ملف البيئة `.env` (مثال):
+3. Create a `.env` file (example):
    ```env
-   PORT=5000
-   connectionString=mongodb://localhost:27017/laithTask
-   salt=7
-   SECRET=laithTask
+   PORT=5000 
+   connectionString= (MongoDB connection string)
+   salt= (Bcrypt salt rounds)
+   SECRET= (JWT secret key)
    ```
-4. شغّل السيرفر:
+4. Start the server:
    ```bash
    npm run dev
    ```
-   أو
+   or
    ```bash
    node server.js
    ```
 
-### 2️⃣ تشغيل الفرونت إند
-1. انتقل لمجلد الفرونت إند:
+### 2️⃣ Run Frontend
+1. Navigate to the frontend folder:
    ```bash
    cd frontend
    ```
-2. نزّل البكجات:
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. شغّل التطبيق:
+3. Start the app:
    ```bash
    npm run dev
    ```
-4. افتح المتصفح على:
+4. Open in your browser:
    ```
    http://localhost:5173
    ```
 
----
 
-## 📌 ملاحظات
-- يمكنك تعديل `connectionString` في ملف `.env` إذا بدك تستخدم **MongoDB Atlas** بدل localhost.  
-- الـ Frontend متصل مع الـ Backend على `http://localhost:5000/api`.  
-- لتجهيز نسخة Production: 
-  - من داخل `frontend/` اعمل:
-    ```bash
-    npm run build
-    ```
-  - واربطها مع الباك إند أو أي سيرفر استضافة.  
 
----
 
-## 🕒 معلومات إضافية (للتقرير المطلوب)
-- **ساعات العمل:** ~ X ساعات  
-- **التحديات:** إعداد الاتصال بين React و Express + التعامل مع Authentication.  
-- **الحلول:** استخدام CORS، JWT، وتجهيز API واضحة للمهمات.  
+
+
+
+
